@@ -1,1 +1,224 @@
-<h1>Hola! aquí irá la pagina de la boda. Se irá armando pero por ahora se tendrá este texto para probar de que el QR y el URL funcionan.</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocky &amp; Carmen</title>
+
+  <!-- Fuente elegida -->
+  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #8e44ad;
+      --secondary: #f7f1ff;
+      --accent-light: #ede7ff; /* secciones diferenciadas */
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Satisfy', cursive;
+      background: var(--secondary);
+      color: #333;
+      line-height: 1.5;
+      padding-bottom: 3rem;
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero { position: relative; text-align: center; color: #fff; }
+    .hero-img { width: 100%; height: auto; display: block; }
+    /* TODO: delete css if not used at the end. this was for the big title */
+    /* .hero-title {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,.6);
+    } */
+    .hero-title {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(2.1rem, 8vw, 3rem); /* se adapta al ancho */
+      text-shadow: 0 2px 4px rgba(0,0,0,.6);
+      white-space: nowrap; /* evita salto */
+    }
+    .hero-sub { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 1.4rem; text-shadow: 0 2px 4px rgba(0,0,0,.6); }
+    .hero-logo { position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); width: 100px; height: auto; opacity: .9; }
+
+    /* ------------- LAYOUT ------------- */
+    main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+    section { margin-bottom: 2.5rem; }
+
+    figure { margin: 0; text-align: center; }
+    figure img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,.1); }
+
+    address { font-style: normal; text-align: center; margin-top: 1rem; }
+    address a { color: var(--primary); text-decoration: none; }
+
+    iframe { width: 100%; aspect-ratio: 16/9; border: none; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,.1); }
+
+    /* Mapa incrustado */
+    .map-embed { width: 100%; height: 350px; border: 0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,.1); }
+
+    /* ------------- COUNTDOWN ------------- */
+    #countdown-section { text-align: center; }
+    #countdown-section h2 { margin-bottom: 1rem; font-size: 2rem; color: var(--primary); }
+    #countdown { display: flex; justify-content: center; gap: 1.5rem; font-size: 1.8rem; }
+    #countdown div { text-align: center; }
+    #countdown span { display: block; font-size: 3rem; }
+
+    /* ------------- LIVE MUSIC ------------- */
+    .videos-section { background: var(--accent-light); padding: 2.5rem 1rem; border-radius: 12px; }
+    .videos-section h2 { text-align: center; margin-bottom: 1.5rem; color: var(--primary); font-size: 2.3rem; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.5rem; }
+    .video-grid figure { display: flex; flex-direction: column; gap: .5rem; align-items: center; }
+    .video-grid figcaption { font-size: 1.1rem; color: var(--primary); }
+
+    /* ------------- FOOTER ------------- */
+    footer { text-align: center; padding: 1rem; background: var(--primary); color: #fff; }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <header class="hero">
+    <img class="hero-img" src="assets/images/PREBODA R&C-21.jpg" alt="Foto de Rocky & Carmen">
+
+    <!-- Logo de iniciales (reemplázalo o elimínalo) -->
+    <img class="hero-logo" src="assets/images/iniciales.png" alt="Iniciales de la pareja">
+
+    <!-- Título flotante -->
+    <h1 class="hero-title">Rocky &amp; Carmen</h1>
+    <p class="hero-sub">¡Nos casamos!</p>
+  </header>
+
+  <main>
+    <!-- Mensaje de invitación -->
+    <section id="invitation">
+      <h2>CON LA BENDICIÓN DE DIOS Y DE NUESTROS PADRES:</h2>
+      <p>Tenemos el agrado de invitarle a Ud. y familia a nuestro matrimonio,
+        que se realizará el día viernes 1 de agosto a horas 8:00 a.m.,
+        en la Parroquia Santiago Apóstol de Ananea.</p>
+      <figure>
+        <img src="assets/images/PREBODA R&C-67.jpg" alt="Otra foto de Rocky y Carmen">
+        <figcaption></figcaption>
+      </figure>
+    </section>
+
+    <!-- DETALLES CEREMONIA -->
+    <section id="ceremony-details">
+      <h2>Detalles de la ceremonia</h2>
+      <p style="text-align:center;font-size:1.2rem;">Viernes, 1 de Agosto de 2025 &bull; 8:00&nbsp;a.m.</p>
+      <figure>
+        <img src="assets/images/iglesia.jpg" alt="Imagen de la iglesia donde se celebrará la ceremonia">
+        <figcaption>Parroquia de Ananea</figcaption>
+      </figure>
+      <address>
+        Dirección de la parroquia:<br>
+        --FALTA!!: se necesita una dirección de la parroquia aquí--<br>
+        <a href="https://maps.google.com/?q=-14.678894,-69.532379" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </address>
+
+      <div class="map-container" style="margin-top:1rem; text-align:center;">
+        <iframe class="map-embed" title="Ubicación de la ceremonia"
+          src="https://www.google.com/maps?q=-14.678894,-69.532379&z=17&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- DETALLES RECEPCIÓN -->
+    <section id="reception-details">
+      <h2>Detalles de la recepción</h2>
+      <p style="text-align:center;font-size:1.2rem;">Viernes, 1 de Agosto de 2025 &bull; 1:00&nbsp;p.m.</p>
+      <figure>
+        <img src="assets/images/recepcion.jpg" alt="--FALTA!!: se necesita una foto de la recepción aquí si se necesita. Sino esta imagen podría no estar--">
+        <figcaption>Salón de Recepciones Villa Real</figcaption>
+      </figure>
+      <address>
+        Dirección del salón:<br>
+        --FALTA!!: se necesita una dirección de la recepción aquí--<br>
+        <a href="https://maps.google.com/?q=-14.677486,-69.535751" target="_blank" rel="noopener">Ver en Google Maps</a>
+      </address>
+
+      <div class="map-container" style="margin-top:1rem; text-align:center;">
+        <iframe class="map-embed" title="Ubicación de la recepción"
+          src="https://www.google.com/maps?q=-14.677486,-69.535751&z=17&output=embed" loading="lazy" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section id="countdown-section" aria-label="Cuenta regresiva para la boda">
+      <h2>Solo faltan...</h2>
+      <div id="countdown">
+        <div><span id="days">--</span>Días</div>
+        <div><span id="hours">--</span>Horas</div>
+        <div><span id="minutes">--</span>Minutos</div>
+        <div><span id="seconds">--</span>Segundos</div>
+      </div>
+      <figure>
+        <img src="assets/images/PREBODA R&C-27.jpg" alt="Imagen de la pareja">
+      </figure>
+    </section>
+
+    <!-- GRUPOS MUSICALES -->
+    <section id="live-music" class="videos-section" aria-label="Grupos musicales invitados">
+      <h2>Grupos invitados</h2>
+      <div class="video-grid">
+        <figure>
+          <figcaption>Saúl Yauri</figcaption>
+          <iframe src="https://www.youtube.com/embed/Lhm1XfGTB3A" title="Saúl Yauri" allowfullscreen></iframe>
+        </figure>
+        <figure>
+          <figcaption>Amigos de Coaza</figcaption>
+          <iframe src="https://www.youtube.com/embed/-d2AVhpMtb0" title="Amigos de Coaza" allowfullscreen></iframe>
+        </figure>
+        <figure>
+          <figcaption>Donnie Yaipén</figcaption>
+          <iframe src="https://www.youtube.com/embed/4DYm12ahrbM" title="Donnie Yaipén" allowfullscreen></iframe>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Con cariño, Rocky &amp; Carmen</p>
+  </footer>
+
+  <script>
+    // Cuenta regresiva en tiempo real
+    (function () {
+      const targetDate = new Date('2025-12-20T16:00:00-05:00').getTime(); // hora local Lima
+      const daysEl = document.getElementById('days');
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+
+      const pad = n => n.toString().padStart(2, '0');
+
+      function updateCountdown() {
+        const now = Date.now();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          daysEl.textContent = hoursEl.textContent = minutesEl.textContent = secondsEl.textContent = '00';
+          clearInterval(timer);
+          return;
+        }
+        const total = Math.floor(diff / 1000);
+        const days = Math.floor(total / 86400);
+        const hours = Math.floor((total % 86400) / 3600);
+        const minutes = Math.floor((total % 3600) / 60);
+        const seconds = total % 60;
+        daysEl.textContent = pad(days);
+        hoursEl.textContent = pad(hours);
+        minutesEl.textContent = pad(minutes);
+        secondsEl.textContent = pad(seconds);
+      }
+
+      updateCountdown();
+      const timer = setInterval(updateCountdown, 1000);
+    })();
+  </script>
+</body>
+</html>
