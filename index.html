@@ -6,7 +6,11 @@
   <title>Rocky &amp; Carmen</title>
 
   <!-- Fuente elegida -->
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
 
   <style>
     :root {
@@ -18,7 +22,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Satisfy', cursive;
+      /* font-family: 'Satisfy', cursive; */
+      font-family: "Dancing Script", cursive;
       background: var(--secondary);
       color: #333;
       line-height: 1.5;
@@ -28,18 +33,10 @@
     /* ---------------- HERO ---------------- */
     .hero { position: relative; text-align: center; color: #fff; }
     .hero-img { width: 100%; height: auto; display: block; }
-    /* TODO: delete css if not used at the end. this was for the big title */
-    /* .hero-title {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 3rem;
-      text-shadow: 0 2px 4px rgba(0,0,0,.6);
-    } */
+
     .hero-title {
       position: absolute;
-      bottom: 2rem;
+      bottom: 2.5rem;
       left: 50%;
       transform: translateX(-50%);
       font-size: clamp(2.1rem, 8vw, 3rem); /* se adapta al ancho */
@@ -47,7 +44,13 @@
       white-space: nowrap; /* evita salto */
     }
     .hero-sub { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); font-size: 1.4rem; text-shadow: 0 2px 4px rgba(0,0,0,.6); }
-    .hero-logo { position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); width: 100px; height: auto; opacity: .9; }
+
+
+    .hero-logo { position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); }
+    .hero-icon { width: 100px; height: auto; opacity: .9; }
+    .hero-text { font-size: 1.4rem; width: 300px; text-shadow: 0 2px 4px rgba(0,0,0,.6); }
+
+    .invitation-names strong { font-size: 1.3rem; }
 
     /* ------------- LAYOUT ------------- */
     main { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
@@ -78,6 +81,9 @@
     .video-grid figure { display: flex; flex-direction: column; gap: .5rem; align-items: center; }
     .video-grid figcaption { font-size: 1.1rem; color: var(--primary); }
 
+    /* ------------- VIDEO ------------- */
+    .portrait-video { aspect-ratio: 9 / 16; width: 95%; border-radius: 8px;}
+
     /* ------------- FOOTER ------------- */
     footer { text-align: center; padding: 1rem; background: var(--primary); color: #fff; }
   </style>
@@ -85,10 +91,13 @@
 <body>
   <!-- HERO -->
   <header class="hero">
-    <img class="hero-img" src="assets/images/PREBODA R&C-21.jpg" alt="Foto de Rocky & Carmen">
+    <img class="hero-img" src="assets/images/PREBODA R&C-7.jpg" alt="Foto de Rocky & Carmen">
 
-    <!-- Logo de iniciales (reemplázalo o elimínalo) -->
-    <img class="hero-logo" src="assets/images/iniciales.png" alt="Iniciales de la pareja">
+    <!-- <img class="hero-logo" src="assets/images/iniciales.png" alt="Iniciales de la pareja"> -->
+    <div class="hero-logo">
+      <img class="hero-icon" src="assets/images/iniciales.png" alt="Iniciales de la pareja">
+      <p class="hero-text">Los kilómetros no cuentan si eres tú quien camina a mi lado</p>
+    </div>
 
     <!-- Título flotante -->
     <h1 class="hero-title">Rocky &amp; Carmen</h1>
@@ -96,29 +105,48 @@
   </header>
 
   <main>
-    <!-- Mensaje de invitación -->
+    <!-- VIDEO DE ENTRADA -->
+    <section id="featured-video-start" aria-labelledby="Video">
+      <!-- <h2 id="video-title">Featured Project Demo</h2> -->
+      <figure>
+        <video controls preload="metadata" class="portrait-video">
+          <source src="assets/videos/TIKTOK-D2.mp4" type="video/mp4" />
+          <!-- Accessible fallback -->
+          <p>El navegador tuvo problemas para cargar un video de Rocy & Carmen pero puedes mirarlo <a href="https://www.tiktok.com/@anitatorresorganizadora/video/7516165102891011334">aquí</a>.</p>
+        </video>
+      </figure>
+    </section>
+
+    <!-- MENSAJE DE INVITACIÓN -->
     <section id="invitation">
-      <h2>CON LA BENDICIÓN DE DIOS Y DE NUESTROS PADRES:</h2>
-      <p>Tenemos el agrado de invitarle a Ud. y familia a nuestro matrimonio,
-        que se realizará el día viernes 1 de agosto a horas 8:00 a.m.,
-        en la Parroquia Santiago Apóstol de Ananea.</p>
+      <h2>Con la bendición de Dios, nuestros padres y padrinos</h2>
+      <p>Tenemos el agrado de invitarle a Ud. y familia a nuestro matrimonio, que se realizará el día: </p>
+      <p><strong>Viernes 1 de agosto</strong> a las <strong>8:00 a.m.</strong>  en la <strong>Parroquia Santiago Apóstol de Ananea</strong>.</p>
       <figure>
         <img src="assets/images/PREBODA R&C-67.jpg" alt="Otra foto de Rocky y Carmen">
         <figcaption></figcaption>
       </figure>
     </section>
 
+    <!-- NOMBRES DE PADRES Y PADRINOS -->
+    <section class="invitation-names">
+      <strong>Padres de los novios</strong>
+      <p>Samuel Ramos Quispe &amp; Martha Mamani De Ramos</p>
+      <p>Oscar Mamani Flores &amp; Mónica Yolanda Mamani Fuentes</p>
+      <strong>Padrinos de boda</strong>
+      <p>Javier Quispe Mamani &amp; Celia Arrosquipa Flores</p>
+      <p>Silver Vidal Canaza Maldonado &amp; Luz Delia Sacaca Machaca</p>
+      <p>Tomy Richar Ccama Quea</p>
+    </section>
+
     <!-- DETALLES CEREMONIA -->
     <section id="ceremony-details">
-      <h2>Detalles de la ceremonia</h2>
-      <p style="text-align:center;font-size:1.2rem;">Viernes, 1 de Agosto de 2025 &bull; 8:00&nbsp;a.m.</p>
+      <h2>Ceremonia religiosa</h2>
+      <p style="text-align:center;font-size:1.2rem;">Viernes, 1 de Agosto de 2025 &bull; 8:00&nbsp;a.m. en la Parroquia Santiago Apostol de Ananea</p>
       <figure>
         <img src="assets/images/iglesia.jpg" alt="Imagen de la iglesia donde se celebrará la ceremonia">
-        <figcaption>Parroquia de Ananea</figcaption>
       </figure>
       <address>
-        Dirección de la parroquia:<br>
-        --FALTA!!: se necesita una dirección de la parroquia aquí--<br>
         <a href="https://maps.google.com/?q=-14.678894,-69.532379" target="_blank" rel="noopener">Ver en Google Maps</a>
       </address>
 
@@ -130,15 +158,9 @@
 
     <!-- DETALLES RECEPCIÓN -->
     <section id="reception-details">
-      <h2>Detalles de la recepción</h2>
+      <h2>Recepción de invitados</h2>
       <p style="text-align:center;font-size:1.2rem;">Viernes, 1 de Agosto de 2025 &bull; 1:00&nbsp;p.m.</p>
-      <figure>
-        <img src="assets/images/recepcion.jpg" alt="--FALTA!!: se necesita una foto de la recepción aquí si se necesita. Sino esta imagen podría no estar--">
-        <figcaption>Salón de Recepciones Villa Real</figcaption>
-      </figure>
       <address>
-        Dirección del salón:<br>
-        --FALTA!!: se necesita una dirección de la recepción aquí--<br>
         <a href="https://maps.google.com/?q=-14.677486,-69.535751" target="_blank" rel="noopener">Ver en Google Maps</a>
       </address>
 
@@ -174,11 +196,23 @@
           <figcaption>Amigos de Coaza</figcaption>
           <iframe src="https://www.youtube.com/embed/-d2AVhpMtb0" title="Amigos de Coaza" allowfullscreen></iframe>
         </figure>
-        <figure>
+        <!-- <figure>
           <figcaption>Donnie Yaipén</figcaption>
           <iframe src="https://www.youtube.com/embed/4DYm12ahrbM" title="Donnie Yaipén" allowfullscreen></iframe>
-        </figure>
+        </figure> -->
       </div>
+    </section>
+
+    <!-- VIDEO DE SALIDA -->
+    <section id="featured-video-end" aria-labelledby="Video">
+      <!-- <h2 id="video-title">Featured Project Demo</h2> -->
+      <figure>
+        <video controls preload="metadata" class="portrait-video">
+          <source src="assets/videos/ROCKEY-2dd.mp4" type="video/mp4" />
+          <!-- Accessible fallback -->
+          <p>El navegador tuvo problemas para cargar un video de Rocy & Carmen pero puedes mirarlo <a href="https://www.tiktok.com/@anitatorresorganizadora/video/7525169326253477176">aquí</a>.</p>
+        </video>
+      </figure>
     </section>
   </main>
 
@@ -189,7 +223,7 @@
   <script>
     // Cuenta regresiva en tiempo real
     (function () {
-      const targetDate = new Date('2025-08-01T08:00:00-05:00').getTime(); // hora local Lima
+      const targetDate = new Date('2025-08-01T08:00:00-05:00').getTime(); // hora local Lima/Perú
       const daysEl = document.getElementById('days');
       const hoursEl = document.getElementById('hours');
       const minutesEl = document.getElementById('minutes');
