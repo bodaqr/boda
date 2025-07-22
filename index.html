@@ -110,6 +110,34 @@
       height: 100%;
     }
 
+    /* ------------- LOGOS ------------- */
+    .logos-section { padding: 2.5rem 1rem; text-align: center; background: var(--secondary); }
+    .logos-section h2 { color: var(--primary); font-size: 2.1rem; margin-bottom: 1.2rem; }
+    .logo-grid {
+      --min: 120px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--min), 1fr));
+      gap: 1rem 1.2rem;
+      align-items: center;
+    }
+    .logo-item {
+      background: var(--primary);
+      padding: .6rem .8rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* aspect-ratio: 3 / 1; marco horizontal uniforme */
+      overflow: hidden;
+    }
+    .logo-item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
     /* El video vertical se ajusta dentro del marco 16:9 sin recortarse */
     .portrait-fit {
       object-fit: contain; /* o 'scale-down' */
@@ -306,6 +334,24 @@
       </figure>
     </section>
   </main>
+
+  <!-- LOGOS DE LOS GRUPOS -->
+  <section id="logos-groups" class="logos-section" aria-label="Logos">
+    <div class="logo-grid">
+      <div class="logo-item"><img src="assets/logos/anita-torres-logo.png" alt="Anita Torres Event Planner" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/amigos-del-coaza.jpeg" alt="Amigos Del Coaza" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/candelaria-camila.png" alt="La Candelaria De Camila Bohorquez" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/donnie-yaipen.png" alt="Donnie Yaipén" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/group-1.png" alt="Grupo" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/jhonny-agrupacion-claros.jpeg" alt="Jhonny y Su Agrupación Claros" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/person-1.jpeg" alt="Person holding guitar" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/rafaela.jpeg" alt="Rafaela y Los Románticos" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/saul-yauri.png" alt="Saúl Yauri" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/siwar-qinti.jpeg" alt="Siwar Qinti" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/susan-del-peru.JPG" alt="Susan Del Perú" loading="lazy"></div>
+      <div class="logo-item"><img src="assets/logos/voces-de-gala.jpeg" alt="Magui Y Sus Voces De Gala" loading="lazy"></div>
+    </div>
+  </section>
 
   <footer>
     <p>Con cariño, Rocky &amp; Carmen</p>
